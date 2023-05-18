@@ -1,0 +1,153 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.opentelemetry",
+    "module": "opentelemetry-exporter-jaeger",
+    "version": "1.22.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk",
+          "version": {
+            "requires": "1.22.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-exporter-jaeger-1.22.0.jar",
+          "url": "opentelemetry-exporter-jaeger-1.22.0.jar",
+          "size": 39216,
+          "sha512": "6dc50fae3390f5c8a56a8afbbedb51c9ea8054b8621d826c61f5176369ce176b492ef53979f8c621e9c4952645551c615b47e869ca0282db37fbbf9636269087",
+          "sha256": "a28c85d3cfdc1a867fa64b485d6c78127a3326034fdbbe65b90dff0e777f79cb",
+          "sha1": "5d09f1459e18c875438bb65cf17916e10a3fb628",
+          "md5": "8aa3b847efbed416a790acb370c0fb8d"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-exporter-common",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-semconv",
+          "version": {
+            "requires": "1.22.0-alpha"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk-extension-autoconfigure-spi",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp",
+          "version": {
+            "requires": "4.10.0"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.jr",
+          "module": "jackson-jr-objects",
+          "version": {
+            "requires": "2.14.1"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk",
+          "version": {
+            "requires": "1.22.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-exporter-jaeger-1.22.0.jar",
+          "url": "opentelemetry-exporter-jaeger-1.22.0.jar",
+          "size": 39216,
+          "sha512": "6dc50fae3390f5c8a56a8afbbedb51c9ea8054b8621d826c61f5176369ce176b492ef53979f8c621e9c4952645551c615b47e869ca0282db37fbbf9636269087",
+          "sha256": "a28c85d3cfdc1a867fa64b485d6c78127a3326034fdbbe65b90dff0e777f79cb",
+          "sha1": "5d09f1459e18c875438bb65cf17916e10a3fb628",
+          "md5": "8aa3b847efbed416a790acb370c0fb8d"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-exporter-jaeger-1.22.0-javadoc.jar",
+          "url": "opentelemetry-exporter-jaeger-1.22.0-javadoc.jar",
+          "size": 80308,
+          "sha512": "1049769b2b54adb232dd9fd4eb923229e065fa8c5dafefe3531a7ef1aeb2b1a869f1b0e1705a8c1219540a3b4e3f7c58530301dc37d226e142d4e32021dd007b",
+          "sha256": "28907eab6115c09dd534e07dcb40d87687fa8e52971e8a8d0040e1c89fde3bac",
+          "sha1": "ed0bbe989740c907da5c7b0130b80e4f2ad2b4cb",
+          "md5": "36e28a2b01058562575b6c8b9ee5a7b1"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-exporter-jaeger-1.22.0-sources.jar",
+          "url": "opentelemetry-exporter-jaeger-1.22.0-sources.jar",
+          "size": 23075,
+          "sha512": "24937a1ec48414db3a227b18f9072bdf6cc2e07f43451263be9d788222a82aa17955afa3af91eb06c0d985702f28ce4bb792d7df98b682e71f10ccaa291b0fdd",
+          "sha256": "a1506766248fec542863641cf29b5b480bcbd5c5035bbe0f77db68f169f86555",
+          "sha1": "0e1477a1cac982e6d53461cff1f93c105d2ac28e",
+          "md5": "f58e53aa62a1a3fbb9a69808762ab5f8"
+        }
+      ]
+    }
+  ]
+}

@@ -25,6 +25,10 @@
     <description>Ledger Writer</description>
     <version>1.3.0</version>
 
+    <properties>
+        <argLine>-Djava.library.path=/usr/local/lib/</argLine>
+    </properties>
+
     <parent>
         <groupId>com.f5.sirius.samples</groupId>
         <artifactId>spring-boot-parent</artifactId>

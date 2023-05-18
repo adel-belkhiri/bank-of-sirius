@@ -1,0 +1,146 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.opentelemetry",
+    "module": "opentelemetry-opentracing-shim",
+    "version": "1.22.0-alpha",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-api",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.opentracing",
+          "module": "opentracing-api",
+          "version": {
+            "requires": "0.33.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-opentracing-shim-1.22.0-alpha.jar",
+          "url": "opentelemetry-opentracing-shim-1.22.0-alpha.jar",
+          "size": 30831,
+          "sha512": "57ee90d469ed13723aa83195b580237173ae79ca43428a30c80efb22587894c092465f70409dd6815dca091dd5ff2b16ba18fe80cdb9cdc3a44959b8ada44c96",
+          "sha256": "a4bb5af43d4e06518376fbf5ca536551b49d053c9d45cd0fedd526b00427581b",
+          "sha1": "3986f8e49939485a30dfc7a7049add4eb1b87b7f",
+          "md5": "54ce47e6e7cf8fba7e2a79de82a9f7f6"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-semconv",
+          "version": {
+            "requires": "1.22.0-alpha"
+          }
+        },
+        {
+          "group": "io.opentracing",
+          "module": "opentracing-noop",
+          "version": {
+            "requires": "0.33.0"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-api",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.opentracing",
+          "module": "opentracing-api",
+          "version": {
+            "requires": "0.33.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-opentracing-shim-1.22.0-alpha.jar",
+          "url": "opentelemetry-opentracing-shim-1.22.0-alpha.jar",
+          "size": 30831,
+          "sha512": "57ee90d469ed13723aa83195b580237173ae79ca43428a30c80efb22587894c092465f70409dd6815dca091dd5ff2b16ba18fe80cdb9cdc3a44959b8ada44c96",
+          "sha256": "a4bb5af43d4e06518376fbf5ca536551b49d053c9d45cd0fedd526b00427581b",
+          "sha1": "3986f8e49939485a30dfc7a7049add4eb1b87b7f",
+          "md5": "54ce47e6e7cf8fba7e2a79de82a9f7f6"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-opentracing-shim-1.22.0-alpha-javadoc.jar",
+          "url": "opentelemetry-opentracing-shim-1.22.0-alpha-javadoc.jar",
+          "size": 79872,
+          "sha512": "fdfd61f5aabc12572c080c2fd52e12a8f5cfbcea9e1799fea916eda5f7c2f9337c79ab0b129c6b8f38cca47c12e771fdebffc25fd9d8095fc309150b0a2a5881",
+          "sha256": "612617272f480640bc54d5ae5e423760759c6fae5b988d3213c433928edf5937",
+          "sha1": "665d86cd2cb4e677e8547fa33c847c21fd9f5cb4",
+          "md5": "02273c58406832478a2dcb9360b36bae"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-opentracing-shim-1.22.0-alpha-sources.jar",
+          "url": "opentelemetry-opentracing-shim-1.22.0-alpha-sources.jar",
+          "size": 15092,
+          "sha512": "fe4fd3819299f4dffa783b7dcdc507d00d653d0b9a7f925549f1e83e9d18939ed78fc32d7264bd969aaa46a376ced40f02fa1311af6300d04b38613723a10d89",
+          "sha256": "ea5808a04e08aea2e6a6cd7b1b45cd5ed2630a19539a34402b211ed61fe58dab",
+          "sha1": "b39040b99c4f5d0c848c7fd5e2f99a6cbf9e0009",
+          "md5": "9c9b6b15606c3981f3174a3e992949e7"
+        }
+      ]
+    }
+  ]
+}

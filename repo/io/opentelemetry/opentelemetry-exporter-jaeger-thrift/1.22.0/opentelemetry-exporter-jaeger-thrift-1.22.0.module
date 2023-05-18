@@ -1,0 +1,145 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.opentelemetry",
+    "module": "opentelemetry-exporter-jaeger-thrift",
+    "version": "1.22.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk",
+          "version": {
+            "requires": "1.22.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-exporter-jaeger-thrift-1.22.0.jar",
+          "url": "opentelemetry-exporter-jaeger-thrift-1.22.0.jar",
+          "size": 12393,
+          "sha512": "27b92d95931b3a7c2455162aed0565e773fe824ddc1db4e7769eccb1dcca09c2f9f9d8a17323252d1e796f60607aeb838d8b91957d3e6555ffa7363ce5135342",
+          "sha256": "21274a6f54ac3ccbe54559c1e6b59dce4918c0e2cf30955ac29db124f76649b3",
+          "sha1": "7889d2d3050d82595b576a4d9f7d046298ff645e",
+          "md5": "40b00fcd2eb41186fdfb40e167e5f65f"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-semconv",
+          "version": {
+            "requires": "1.22.0-alpha"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.jr",
+          "module": "jackson-jr-objects",
+          "version": {
+            "requires": "2.14.1"
+          }
+        },
+        {
+          "group": "io.jaegertracing",
+          "module": "jaeger-client",
+          "version": {
+            "requires": "1.8.1"
+          },
+          "excludes": [
+            {
+              "group": "com.google.code.gson",
+              "module": "gson"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-exporter-jaeger-thrift-1.22.0.jar",
+          "url": "opentelemetry-exporter-jaeger-thrift-1.22.0.jar",
+          "size": 12393,
+          "sha512": "27b92d95931b3a7c2455162aed0565e773fe824ddc1db4e7769eccb1dcca09c2f9f9d8a17323252d1e796f60607aeb838d8b91957d3e6555ffa7363ce5135342",
+          "sha256": "21274a6f54ac3ccbe54559c1e6b59dce4918c0e2cf30955ac29db124f76649b3",
+          "sha1": "7889d2d3050d82595b576a4d9f7d046298ff645e",
+          "md5": "40b00fcd2eb41186fdfb40e167e5f65f"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-exporter-jaeger-thrift-1.22.0-javadoc.jar",
+          "url": "opentelemetry-exporter-jaeger-thrift-1.22.0-javadoc.jar",
+          "size": 77565,
+          "sha512": "d1a7e4c7d74072568c09211d7be19ae0ab04ee839ea0b60b7a878b5141d109a4a84090c8ba682b2f60023e18bf80a0f1338487f503e5aaadf7aaed20ff405fb5",
+          "sha256": "ec2962644c55593068cea4dac5deb21413b9512ab9005c98d8264ff471696181",
+          "sha1": "eb82a21aebc3a14f4504f0027b31086ff3185824",
+          "md5": "0e46e1d3a5bc28e13be95357c6118f1c"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-exporter-jaeger-thrift-1.22.0-sources.jar",
+          "url": "opentelemetry-exporter-jaeger-thrift-1.22.0-sources.jar",
+          "size": 7171,
+          "sha512": "ece6cc2e370b52b18bc7804e709fdfc91177f15ebb362d1f58f0467a246efca0ed4e62e2191ad8f52194356631a47a437921489ba908e359ce523e352959af95",
+          "sha256": "fdd87619a43a7241a8afc2a563fe9b09c0e7020137eb86ed3dc183e65b3d753c",
+          "sha1": "9ebb969b4bf00bcc27abbd416a8f0f580e487e06",
+          "md5": "b9fda70feac52053d700f4c90021b21d"
+        }
+      ]
+    }
+  ]
+}

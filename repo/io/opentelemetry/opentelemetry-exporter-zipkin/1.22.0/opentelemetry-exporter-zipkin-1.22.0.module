@@ -1,0 +1,160 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.opentelemetry",
+    "module": "opentelemetry-exporter-zipkin",
+    "version": "1.22.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.zipkin.reporter2",
+          "module": "zipkin-reporter",
+          "version": {
+            "requires": "2.16.3"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-exporter-zipkin-1.22.0.jar",
+          "url": "opentelemetry-exporter-zipkin-1.22.0.jar",
+          "size": 17882,
+          "sha512": "7bcc4b43dc247011aabedcb9071e29bd5a0433af4d152fb83f6741fd201e779396743513338eb3311364d53caffd5f07a54ce26d906d495222d2d1c132d91215",
+          "sha256": "b0f6f23ae080048105775a539748b9475f8fa1ceb38467f817059ce8f07898eb",
+          "sha1": "eef06af9089e1f6dbb445ae3fdfbfc461b97ca9b",
+          "md5": "5978406349d71db35f6b1603945dcd9f"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-exporter-common",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-semconv",
+          "version": {
+            "requires": "1.22.0-alpha"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk-extension-autoconfigure-spi",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.zipkin.reporter2",
+          "module": "zipkin-sender-okhttp3",
+          "version": {
+            "requires": "2.16.3"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.zipkin.reporter2",
+          "module": "zipkin-reporter",
+          "version": {
+            "requires": "2.16.3"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-exporter-zipkin-1.22.0.jar",
+          "url": "opentelemetry-exporter-zipkin-1.22.0.jar",
+          "size": 17882,
+          "sha512": "7bcc4b43dc247011aabedcb9071e29bd5a0433af4d152fb83f6741fd201e779396743513338eb3311364d53caffd5f07a54ce26d906d495222d2d1c132d91215",
+          "sha256": "b0f6f23ae080048105775a539748b9475f8fa1ceb38467f817059ce8f07898eb",
+          "sha1": "eef06af9089e1f6dbb445ae3fdfbfc461b97ca9b",
+          "md5": "5978406349d71db35f6b1603945dcd9f"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-exporter-zipkin-1.22.0-javadoc.jar",
+          "url": "opentelemetry-exporter-zipkin-1.22.0-javadoc.jar",
+          "size": 80633,
+          "sha512": "f7bd7ce80912ebc3efa8fad7e4254f39f44c32d05bcd3235df5de3455c5fd1c1c1ade381c464149b57d6eabbe1f0ed80e4b42ba47020bb1bf8ae447a0446c23e",
+          "sha256": "33550cb960ac69f01dc0d3d1ed0ccfe400cdd2f70025516e5ed1a4700e6a5dfe",
+          "sha1": "42ec4d0e33a063746e26313f73e43e37b6d95f58",
+          "md5": "7759386ab1624ed2188f848458d8b977"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-exporter-zipkin-1.22.0-sources.jar",
+          "url": "opentelemetry-exporter-zipkin-1.22.0-sources.jar",
+          "size": 10393,
+          "sha512": "c63432c16152af2ea6299004e0ea90f2eda8506e1239efff954b67c4b420104dc19bd02cadb6e94b2ca93cc8baca7bee5c6b0a004f51ea49233336d102a1fece",
+          "sha256": "cf1fba8b1ee815ab859a61aa397a20141c45a15e899cfbb023497bc2dc7d05cf",
+          "sha1": "96a821cd281accf2b5656ab1cc1c7e8912a4f5bc",
+          "md5": "91e0fa6dd94b0a6773d2ddaf63897d73"
+        }
+      ]
+    }
+  ]
+}

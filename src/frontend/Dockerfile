@@ -13,7 +13,7 @@ FROM bos-python
 
 LABEL org.opencontainers.image.source=https://github.com/nginxinc/bank-of-sirius
 
-ENV PORT 8080
+ENV PORT 8060
 ENV THREADS 4
 
 # show python logs as they occur
@@ -35,6 +35,7 @@ RUN set -eux; \
             python3-cffi=1.14.5* \
             python3-wrapt=1.12.1-4*; \
     pip3 install /env/wheels/grpcio/*; \
+	pip3 install /env/opentelemetry-python/opentelemetry-sdk/; \
     pip3 install --requirement /app/requirements.txt; \
     apt-get autoremove -q -y; \
     apt-get clean; \

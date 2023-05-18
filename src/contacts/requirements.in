@@ -38,8 +38,8 @@ Werkzeug==1.0.1
 zipp==1.2.0
 
 # Open Telemetry dependencies
-opentelemetry-sdk==1.11.1
-opentelemetry-exporter-otlp-proto-grpc==1.11.1
+opentelemetry-sdk==1.22.0
+opentelemetry-exporter-otlp-proto-grpc==1.22.0
 opentelemetry-instrumentation-flask==0.30b1
 opentelemetry-instrumentation-sqlalchemy==0.30b1
 opentelemetry-instrumentation-logging==0.30b1

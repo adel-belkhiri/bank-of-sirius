@@ -20,4 +20,6 @@ ENV APP_NAME ledger-writer
 
 COPY target/ledgerwriter.jar /app/libs/ledgerwriter.jar
 
-CMD ["java", "-Dlogging.config=/app/log4j2.xml", "-jar", "/app/libs/ledgerwriter.jar"]
+#ENV LTTNG_UST_DEBUG 1
+
+CMD ["java", "-Dlogging.config=/app/log4j2.xml", "-Djava.library.path=/usr/lib/x86_64-linux-gnu/jni", "-jar", "/app/libs/ledgerwriter.jar"]

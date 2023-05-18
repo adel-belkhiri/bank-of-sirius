@@ -1,0 +1,133 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.opentelemetry",
+    "module": "opentelemetry-extension-kotlin",
+    "version": "1.22.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-api",
+          "version": {
+            "requires": "1.22.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-extension-kotlin-1.22.0.jar",
+          "url": "opentelemetry-extension-kotlin-1.22.0.jar",
+          "size": 4852,
+          "sha512": "d2e4a769411244822b5bdd743b2192b6175cb57cfe436c9273cc2b07e3fb427a3b7e17cbbf7550480609a5598d2a9807a7cf04ece8309bd46c69e5ab3d94ccc3",
+          "sha256": "e795bb829d405a369fbde5f1c466adf60814a9073fc50b3a1c23686a002fe0c2",
+          "sha1": "448053945609bccb6f3a0560995d9dc635531105",
+          "md5": "2a9f8d5772a26858475146b2c5b0008b"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-bom",
+          "version": {
+            "requires": "1.6.10"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-api",
+          "version": {
+            "requires": "1.22.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-extension-kotlin-1.22.0.jar",
+          "url": "opentelemetry-extension-kotlin-1.22.0.jar",
+          "size": 4852,
+          "sha512": "d2e4a769411244822b5bdd743b2192b6175cb57cfe436c9273cc2b07e3fb427a3b7e17cbbf7550480609a5598d2a9807a7cf04ece8309bd46c69e5ab3d94ccc3",
+          "sha256": "e795bb829d405a369fbde5f1c466adf60814a9073fc50b3a1c23686a002fe0c2",
+          "sha1": "448053945609bccb6f3a0560995d9dc635531105",
+          "md5": "2a9f8d5772a26858475146b2c5b0008b"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-extension-kotlin-1.22.0-javadoc.jar",
+          "url": "opentelemetry-extension-kotlin-1.22.0-javadoc.jar",
+          "size": 368,
+          "sha512": "573af17bbd4038395c0a4fc2d98a0dc84803fd76a4208383db9b331caa3c6544887b6c104076204b6835abca6065d5689c65668af8e1c25414d1d1397380fe85",
+          "sha256": "84cd1f48623280ca91bf2cb42070f36c7771ffcb644d049c1f402f2514c2f1f3",
+          "sha1": "581018577d517852f96df44511acf8de10b63617",
+          "md5": "db878c025da9b046e4776834caa4c7e7"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-extension-kotlin-1.22.0-sources.jar",
+          "url": "opentelemetry-extension-kotlin-1.22.0-sources.jar",
+          "size": 2709,
+          "sha512": "6aa7106dea499b45054eb884dc24ed19cb7d06752971dbed8e05cf242680bb3323c6bcbf1fda28959dc880c961f1c38f2e3a8c38c6275b17f460b843ef466380",
+          "sha256": "a837d5ecb57c13db8fc8f7a016df9a34a69187fad77f66cbe9fe239786022337",
+          "sha1": "47c17fc4eda6412a074309b6bc4cad063b852f90",
+          "md5": "47efc5d3ed4330901e7b02bd76082a71"
+        }
+      ]
+    }
+  ]
+}

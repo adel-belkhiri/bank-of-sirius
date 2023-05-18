@@ -1,0 +1,118 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.opentelemetry",
+    "module": "opentelemetry-extension-incubator",
+    "version": "1.22.0-alpha",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-api",
+          "version": {
+            "requires": "1.22.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-extension-incubator-1.22.0-alpha.jar",
+          "url": "opentelemetry-extension-incubator-1.22.0-alpha.jar",
+          "size": 5365,
+          "sha512": "34bd25b113c1d4ac14a6f285565c4a259d58b2cf01628b78263e2f377c1b2a81396032a9847be503872a332df46b7216f845a0b8c856a3fc2621cba1c0966ec2",
+          "sha256": "ea039ea4422ababbae78e10208484890752225b6e0d122f2eaf499f06cbfc260",
+          "sha1": "680b7cb2ebf8d7e4686a7a8728fb27896bc2c0dc",
+          "md5": "c4dcb296c67b3a5725393cc6f34d666c"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-api",
+          "version": {
+            "requires": "1.22.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-extension-incubator-1.22.0-alpha.jar",
+          "url": "opentelemetry-extension-incubator-1.22.0-alpha.jar",
+          "size": 5365,
+          "sha512": "34bd25b113c1d4ac14a6f285565c4a259d58b2cf01628b78263e2f377c1b2a81396032a9847be503872a332df46b7216f845a0b8c856a3fc2621cba1c0966ec2",
+          "sha256": "ea039ea4422ababbae78e10208484890752225b6e0d122f2eaf499f06cbfc260",
+          "sha1": "680b7cb2ebf8d7e4686a7a8728fb27896bc2c0dc",
+          "md5": "c4dcb296c67b3a5725393cc6f34d666c"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-extension-incubator-1.22.0-alpha-javadoc.jar",
+          "url": "opentelemetry-extension-incubator-1.22.0-alpha-javadoc.jar",
+          "size": 82488,
+          "sha512": "881909c4d1d213a714012a400a916bf5d73d9decc6e45a4479561aa6b0f98cbda155ef2c4c352d924bb6fe0e4a8bb60f66e925bd26cd6f4649820cb96f8ea444",
+          "sha256": "604b0cb255545acc33712acead849b4785f31f97f346a4039130e62ee97cc23b",
+          "sha1": "d8f2f1afebb7cbf954cad5174798c91fb5a7107f",
+          "md5": "941589956f5640364ac7176c6ab3b9de"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-extension-incubator-1.22.0-alpha-sources.jar",
+          "url": "opentelemetry-extension-incubator-1.22.0-alpha-sources.jar",
+          "size": 3465,
+          "sha512": "102ab43b064d63f8b7c53c1e73e966e5729ee3ad96f154cb047202587c06e34815e16259f7530bc944a1a480d2c42c9fe92037cfa9c40882396b038a8287f2fb",
+          "sha256": "41c081b34ee69a1c2d5a5607627d1d881266bbd09eb7305fae1e2b24f033a9e2",
+          "sha1": "daacc95913e886044557db485e06a873da89fbb8",
+          "md5": "2f7b49f96bb106cf34b7e15a051be1db"
+        }
+      ]
+    }
+  ]
+}

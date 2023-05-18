@@ -20,4 +20,4 @@ ENV APP_NAME transaction-history
 
 COPY target/transactionhistory.jar /app/libs/transactionhistory.jar
 
-CMD ["java", "-Dlogging.config=/app/log4j2.xml", "-jar", "/app/libs/transactionhistory.jar"]
+CMD ["java", "-Dlogging.config=/app/log4j2.xml", "-Djava.library.path=/usr/lib/x86_64-linux-gnu/jni", "-jar", "/app/libs/transactionhistory.jar"]

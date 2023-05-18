@@ -1,0 +1,139 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.opentelemetry",
+    "module": "opentelemetry-sdk-extension-incubator",
+    "version": "1.22.0-alpha",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk",
+          "version": {
+            "requires": "1.22.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-sdk-extension-incubator-1.22.0-alpha.jar",
+          "url": "opentelemetry-sdk-extension-incubator-1.22.0-alpha.jar",
+          "size": 103763,
+          "sha512": "51a7cac84acb408fa1ed5fd4cea8e5ed75b184972d1a556f37ee162f408f8ae868ff1497f49ff4c1468a889abaacc045acca8b82013b62243f090543f1157d64",
+          "sha256": "6cc39d40b6ccb414251f1853e6356651aeee94c1741836d3430f81b93e4ccbb0",
+          "sha1": "3ee35d63f3fc93261568a8630fa4b5e4911f116d",
+          "md5": "b63298b69a5833e611fc232e144033b9"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk-extension-autoconfigure-spi",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "org.yaml",
+          "module": "snakeyaml",
+          "version": {
+            "requires": "1.33"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-semconv",
+          "version": {
+            "requires": "1.22.0-alpha"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk",
+          "version": {
+            "requires": "1.22.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-sdk-extension-incubator-1.22.0-alpha.jar",
+          "url": "opentelemetry-sdk-extension-incubator-1.22.0-alpha.jar",
+          "size": 103763,
+          "sha512": "51a7cac84acb408fa1ed5fd4cea8e5ed75b184972d1a556f37ee162f408f8ae868ff1497f49ff4c1468a889abaacc045acca8b82013b62243f090543f1157d64",
+          "sha256": "6cc39d40b6ccb414251f1853e6356651aeee94c1741836d3430f81b93e4ccbb0",
+          "sha1": "3ee35d63f3fc93261568a8630fa4b5e4911f116d",
+          "md5": "b63298b69a5833e611fc232e144033b9"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-sdk-extension-incubator-1.22.0-alpha-javadoc.jar",
+          "url": "opentelemetry-sdk-extension-incubator-1.22.0-alpha-javadoc.jar",
+          "size": 93483,
+          "sha512": "a84eb603d9ed1813565664e1108c4c06a1376849ab5654ffe6d2f9440842807e58e736644490fe90af8fb8b243e43f9e30aaa76aff70bd466315471c6358b54b",
+          "sha256": "649e5b05ed33e8bce68ba828939fd133d44c858c80ec930004fb944af7cd242a",
+          "sha1": "71ba33c041117f34ac4e03ffcf40df2bfbb6996b",
+          "md5": "333ab11234bb21d454e03ed8afde299d"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-sdk-extension-incubator-1.22.0-alpha-sources.jar",
+          "url": "opentelemetry-sdk-extension-incubator-1.22.0-alpha-sources.jar",
+          "size": 64470,
+          "sha512": "4b35a62c5d914eee563009783b086cc9a44d334be1316652189fd6acc89bbf8ab0f4b6936785c3cf3de7f36dd45c240bba4556bfc244dd6d154927000db22a88",
+          "sha256": "2692d7e58c60386331573188378b3af9462a349a56c512f6fc9ab282834abc2a",
+          "sha1": "fa46971fbc0a166fd71109365a13bfc817b18df8",
+          "md5": "48fc6e344c9d03cc4f477fbfecf1b1ec"
+        }
+      ]
+    }
+  ]
+}

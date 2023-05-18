@@ -21,14 +21,14 @@ LABEL org.opencontainers.image.source=https://github.com/nginxinc/bank-of-sirius
 ENV LANG C.UTF-8
 ENV PORT 8080
 ENV SSL_CERT_FILE /etc/ssl/certs/ca-certificates.crt
-ENV JAVA_HOME=/usr/lib/jvm/zulu8
+ENV JAVA_HOME=/usr/lib/jvm/zulu17
 # Configure the JVM to:
 # 1. Use a non-blocking source of entropy because in containerized environments
 #    blocking sources of entropy can become quickly exhausted.
 # 2. Set the HEAP size dynamically based on the amount of memory specified in
 #    the cgroup memory limit rather than the total memory of the host machine.
 # 3. Set heap size on almost 50% of the total of the memory limit.
-ENV JAVA_TOOL_OPTIONS "-Djava.security.egd=file:/dev/urandom -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAMFraction=2"
+ENV JAVA_TOOL_OPTIONS "-Djava.security.egd=file:/dev/urandom -XX:+UnlockExperimentalVMOptions -XX:MaxRAMFraction=2"
 
 COPY app/log4j2.xml /app/log4j2.xml
 
@@ -40,20 +40,25 @@ RUN set -eux; \
         ca-certificates \
         curl \
         gnupg \
-        software-properties-common; \
+        software-properties-common \
+        iputils-ping \
+        vim \
+        liblttng-ust-java \
+        liblttng-ust-java-jni \
+        liblttng-ust-agent-java; \
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0x219BD9C9; \
     # Use Azul distribution of the OpenJDK to allow for an escalation and support path
     curl --silent --location "https://cdn.azul.com/zulu/bin/zulu-repo_${ZULU_REPO_VER}_all.deb" > /tmp/zulu-repo.deb; \
     echo "${ZULU_REPO_DEB_CHECKSUM}  /tmp/zulu-repo.deb" | sha256sum --check; \
     dpkg --install /tmp/zulu-repo.deb; \
     apt-get -qq update; \
-    apt-get -qq -y --no-install-recommends install zulu8-jdk; \
+    apt-get -qq -y --no-install-recommends install zulu17-jdk; \
     apt-get -qq -y purge curl gnupg software-properties-common; \
     apt-get autoremove -y; \
     apt-get clean; \
     rm -f /var/lib/apt/lists/*_* /tmp/zulu-repo.deb /etc/machine-id; \
     # Use a non-blocking PRNG in order to conserve entropy on containerized systems
-    sed -i 's/^\(securerandom.strongAlgorithms\)=.*$/\1=NativePRNGNonBlocking:SUN/' $JAVA_HOME/jre/lib/security/java.security; \
+    # sed -i 's/^\(securerandom.strongAlgorithms\)=.*$/\1=NativePRNGNonBlocking:SUN/' $JAVA_HOME/jre/lib/security/java.security; \
     mkdir --parents /app/libs /app/resources /app/classes; \
     groupadd --gid 1919 app; \
     useradd --home-dir /app --uid 1919 --gid 1919 --shell /bin/bash app; \

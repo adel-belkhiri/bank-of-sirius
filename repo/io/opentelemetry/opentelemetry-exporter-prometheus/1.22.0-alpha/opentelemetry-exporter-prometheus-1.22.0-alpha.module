@@ -1,0 +1,125 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.opentelemetry",
+    "module": "opentelemetry-exporter-prometheus",
+    "version": "1.22.0-alpha",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk-metrics",
+          "version": {
+            "requires": "1.22.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-exporter-prometheus-1.22.0-alpha.jar",
+          "url": "opentelemetry-exporter-prometheus-1.22.0-alpha.jar",
+          "size": 31011,
+          "sha512": "60a2a894857db4b7b395941ff7eaff88b82368b01373a5eb1424e3becdbb454d8a759faea3d2cc5f0b99dee82f750a91c14fbf0b8ff4f33612e2e26d0a809e5f",
+          "sha256": "fe7a6c0891c283576ce2fcbbfce3868d70e5920db7f4c6f0182f836f415d5ba7",
+          "sha1": "712ab1d29c5aace62a88ba7af17566472076aa76",
+          "md5": "2449753e987cf0d1f80c52a5246af582"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk-extension-autoconfigure-spi",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk-metrics",
+          "version": {
+            "requires": "1.22.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-exporter-prometheus-1.22.0-alpha.jar",
+          "url": "opentelemetry-exporter-prometheus-1.22.0-alpha.jar",
+          "size": 31011,
+          "sha512": "60a2a894857db4b7b395941ff7eaff88b82368b01373a5eb1424e3becdbb454d8a759faea3d2cc5f0b99dee82f750a91c14fbf0b8ff4f33612e2e26d0a809e5f",
+          "sha256": "fe7a6c0891c283576ce2fcbbfce3868d70e5920db7f4c6f0182f836f415d5ba7",
+          "sha1": "712ab1d29c5aace62a88ba7af17566472076aa76",
+          "md5": "2449753e987cf0d1f80c52a5246af582"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-exporter-prometheus-1.22.0-alpha-javadoc.jar",
+          "url": "opentelemetry-exporter-prometheus-1.22.0-alpha-javadoc.jar",
+          "size": 77471,
+          "sha512": "750ed948b3342c0c54f8e2f913f11e9c2064beecb4c7df34a447f34be46f4d62321d9475f5482d7df57fa1b772629c3e0eb614b937a827bccb6614e24e84bb12",
+          "sha256": "444675bb4a134e8fa9f1eda35c5428de0253a1148ac2dc621758de56d8d634d7",
+          "sha1": "938b86dd018609d71349f4bd9402e279ff3314db",
+          "md5": "4c8a0370671acd0ace8aef8a270179a9"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-exporter-prometheus-1.22.0-alpha-sources.jar",
+          "url": "opentelemetry-exporter-prometheus-1.22.0-alpha-sources.jar",
+          "size": 12734,
+          "sha512": "b9b4e2ca297a31bb80a5d97dafc2a071d46222f98e86feb095a45398b0b5aaebd8b546f80c093eaf50d95905587fe9b395013c107d2dafd140ec0cc96fa36fd9",
+          "sha256": "80db1b9fa8fdaf8eb7e36568261b2ed118ef6460c592c8a1df9aa3e5ffedfac2",
+          "sha1": "35c1d1d5e9671010b66db633772410f9b940ad52",
+          "md5": "81b20aecc1b30450018b94613c3eb2bd"
+        }
+      ]
+    }
+  ]
+}

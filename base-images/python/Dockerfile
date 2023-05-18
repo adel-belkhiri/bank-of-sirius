@@ -30,6 +30,7 @@ ENV PYTHONUNBUFFERED 1
 # source /env/bin/activate. This ensures the application is executed within
 # the context of the virtualenv and will have access to its dependencies.
 ENV VIRTUAL_ENV /env
+
 # Python grpc libraries should use the host's native DNS resolution
 ENV GRPC_DNS_RESOLVER native
 ENV PIP_CONFIG_FILE /env/etc/pip.conf
@@ -47,7 +48,7 @@ RUN set -eux; \
     chown "app:app" /app; \
     chown "app:app" /env; \
     apt-get -qq update; \
-    apt-get install -qq -y ca-certificates python3 python3-pip python3-venv python3-wheel; \
+    apt-get install -qq -y ca-certificates python3 python3-pip python3-venv python3-wheel python3-lttngust liblttng-ust-dev liblttng-ctl-dev git; \
     apt-get clean; \
     python3 -m venv --system-site-packages /env; \
     mkdir -p /env/cache /env/wheels/pytest /env/wheels/grpcio; \
@@ -55,6 +56,15 @@ RUN set -eux; \
     /env/bin/pip3 download --dest /env/wheels/pytest pytest; \
     /env/bin/pip3 download --dest /env/wheels/grpcio grpcio==1.39.0; \
     rm -rf /var/lib/apt/lists/* /root/.cache /env/cache/* /etc/machine-id
+
+# Install a patched version of opentelemetry-python
+RUN git clone https://github.com/open-telemetry/opentelemetry-python.git  /env/opentelemetry-python; \
+	cd /env/opentelemetry-python; \
+	git checkout v1.11.1;
+
+COPY ./patch/lttng-instrumentation.patch  /env/opentelemetry-python
+RUN cd /env/opentelemetry-python; \
+	git apply ./lttng-instrumentation.patch
 
 EXPOSE 8080
 WORKDIR /app

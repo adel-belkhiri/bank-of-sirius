@@ -13,6 +13,9 @@ import os
 
 import bunyan
 import sys
+import lttngust
+import logging
+import lttngust.loghandler
 
 import tracing
 
@@ -50,21 +53,40 @@ logconfig_dict = {
             'class': 'logging.StreamHandler',
             'formatter': 'bunyan',
             'stream': 'ext://sys.stdout'
-        }
+        },
+        "lttng_log_handler": {
+            'class': 'lttngust.loghandler._Handler'
+        },
+        "file_log_handler": {
+            'class' : 'logging.handlers.RotatingFileHandler',
+            'formatter': 'bunyan',
+            'filename' : '/var/run/log/xxx.log',
+            'level'    : 'INFO',
+            'maxBytes' : 10000,
+            'backupCount': 10,
+            'mode': 'a',
+            'delay': 'True'
+        },
     },
     "loggers": {
         "root": {
             'handlers': ['console']
         },
+        'opentelemetry-ust': {
+            'formatter': 'generic',
+            'handlers': ['lttng_log_handler'],
+            'propagate': 0,
+            'qualname': 'opentelemetry-ust'
+        },
         'gunicorn.error': {
             'formatter': 'generic',
             'handlers': ['console'],
-            'propagate': 0,
+            'propagate': True,
             'qualname': 'gunicorn.error'
         },
         'frontend': {
             'formatter': 'generic',
-            'handlers': ['console'],
+            'handlers': ['console', 'file_log_handler'],
             'propagate': 0,
             'qualname': 'frontend'
         },

@@ -21,9 +21,9 @@ receivers:
           scrape_interval: 120s
           static_configs:
             - targets:
-              - "balance-reader:8080"
-              - "transaction-history:8080"
-              - "ledger-writer:8080"
+              - "localhost:8010"
+              - "localhost:8030"
+              - "localhost:8020"
           metrics_path: "/z/prometheus"
 
 processors:
@@ -34,11 +34,12 @@ exporters:
     endpoint: "0.0.0.0:8889"
 
   logging:
-    logLevel: debug
+#    logLevel: debug
 
   jaeger:
-    endpoint: "jaeger:14250"
-    insecure: true
+    endpoint: "localhost:14250"
+    tls:
+      insecure: true
 
 service:
   pipelines:

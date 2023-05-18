@@ -1,0 +1,146 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.opentelemetry",
+    "module": "opentelemetry-exporter-otlp",
+    "version": "1.22.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk-trace",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk-metrics",
+          "version": {
+            "requires": "1.22.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-exporter-otlp-1.22.0.jar",
+          "url": "opentelemetry-exporter-otlp-1.22.0.jar",
+          "size": 34653,
+          "sha512": "bef771dbb443ecf80a7dd26b0a824161e4a41128ffc7e6ab3ff36b2044d9cc9f01f61e3697253f406cbe72a27f464cd8cffbfd362291bf759106994d10a499cb",
+          "sha256": "50f156b818eb51b99ab546083f8ed1032c7ba3ac2b47d2fb8c2e9d2cddc9f591",
+          "sha1": "45380a7b34a187b39269ee61ab23f9b5dd91726e",
+          "md5": "e193b645859138652f60248d204e227a"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-exporter-otlp-common",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk-extension-autoconfigure-spi",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk-trace",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk-metrics",
+          "version": {
+            "requires": "1.22.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-exporter-otlp-1.22.0.jar",
+          "url": "opentelemetry-exporter-otlp-1.22.0.jar",
+          "size": 34653,
+          "sha512": "bef771dbb443ecf80a7dd26b0a824161e4a41128ffc7e6ab3ff36b2044d9cc9f01f61e3697253f406cbe72a27f464cd8cffbfd362291bf759106994d10a499cb",
+          "sha256": "50f156b818eb51b99ab546083f8ed1032c7ba3ac2b47d2fb8c2e9d2cddc9f591",
+          "sha1": "45380a7b34a187b39269ee61ab23f9b5dd91726e",
+          "md5": "e193b645859138652f60248d204e227a"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-exporter-otlp-1.22.0-javadoc.jar",
+          "url": "opentelemetry-exporter-otlp-1.22.0-javadoc.jar",
+          "size": 115542,
+          "sha512": "bfac227cc6223d42c406c01296175ccc0c0126313664b56db44c16836456e53444bd9eb4ec9ad6eb9e21bb211f18af40e89075331093e3f816f384d64662da80",
+          "sha256": "453fd5cba57a161d026ad9e64a2bdc3adde69cb8f11bfd934f5076d752e94e26",
+          "sha1": "9e87022a239bc1f1174212579b557118d8ee5870",
+          "md5": "ad08e399b07970ae77f74905bf2c2291"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-exporter-otlp-1.22.0-sources.jar",
+          "url": "opentelemetry-exporter-otlp-1.22.0-sources.jar",
+          "size": 21918,
+          "sha512": "f1b6a0f3f2db911168c4525685a318240cd97c6e1cad77f841a5678a82bb9123d3c625184f64cfe470f15eee7192926141bcb6dcacb4b7f83dccd6142df7b648",
+          "sha256": "c2b3d07af339f53abaa0fa189cd8d599c542a73f1bed3e904591cba8ed4d51a1",
+          "sha1": "1cba88d77c39ff538434f6640871e4edaca57afe",
+          "md5": "71df150a21675948b32110e3819d26fb"
+        }
+      ]
+    }
+  ]
+}

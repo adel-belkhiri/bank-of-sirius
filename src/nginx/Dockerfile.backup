@@ -1,0 +1,80 @@
+# Copyright 2021 F5
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+ARG ARCH=amd64
+
+FROM $ARCH/nginx:latest
+#FROM ubuntu:latest
+
+# Install build dependencies
+RUN apt-get update && apt-get install -y apt-utils && \
+	apt-get install -y --no-install-recommends git pkg-config build-essential autoconf libtool libpcre3-dev libssl-dev libxml2-dev libxslt1-dev protobuf-compiler libabsl-dev libabsl* libcurl4-openssl-dev nginx cmake libgrpc10 libgrpc-dev  libgrpc++1 libgrpc++-dev grpc-proto protobuf-compiler libprotobuf-dev protobuf-compiler-grpc libprotobuf-dev
+
+# Install gRPC and its dependencies
+#RUN git clone https://github.com/grpc/grpc.git
+#RUN cd grpc && \
+#    git submodule update --init && \
+#    mkdir -p cmake/build && \
+#    cd cmake/build && \
+#    cmake ../.. && \
+#    make -j4 && \
+#	make install
+
+# Clone the OpenTelemetry C++ SDK and build it
+RUN git clone --single-branch https://github.com/open-telemetry/opentelemetry-cpp.git
+RUN cd opentelemetry-cpp \
+    && mkdir build \
+    && cd build \
+    && cmake -DCMAKE_BUILD_TYPE=release \
+	-DBUILD_TESTING=OFF \
+	-DWITH_EXAMPLES=OFF \
+	-DCMAKE_POSITION_INDEPENDENT_CODE=ON \
+	-DWITH_ABSEIL=ON \
+	..  \
+    && make -j4 \
+    && make install
+
+RUN find / -iname gRPCConfig.cmake
+# Clone the OpenTelemetry Nginx instrumentation from GitHub
+RUN git clone --single-branch  https://github.com/open-telemetry/opentelemetry-cpp-contrib.git
+
+# Build and install the OpenTelemetry Nginx module
+RUN cd opentelemetry-cpp-contrib/instrumentation/nginx \
+    && mkdir build \
+    && cd build \
+    && cmake -DgRPC_BUILD_GRPC_NODE_PLUGIN=OFF \
+			 -DgRPC_BUILD_GRPC_OBJECTIVE_C_PLUGIN=OFF \
+			 -DgRPC_BUILD_GRPC_PHP_PLUGIN=OFF \
+  			 -DgRPC_BUILD_GRPC_PHP_PLUGIN=OFF \
+			 -DgRPC_BUILD_GRPC_PYTHON_PLUGIN=OFF \
+			 -DgRPC_BUILD_GRPC_RUBY_PLUGIN=OFF \
+			 -DgRPC_INSTALL=ON \
+			 -DgRPC_BUILD_TESTS=OFF \
+			 -DgRPC_PROTOBUF_PROVIDER=package \
+			 -DgRPC_ZLIB_PROVIDER=package \
+			 -DgRPC_CARES_PROVIDER=package \
+			 -DgRPC_SSL_PROVIDER=package \
+			 -DCMAKE_BUILD_TYPE=Release \
+  			..\
+    && make -j4 \
+    && make install \
+	&& ldconfig -p | grep otel_ngx_module
+
+#COPY --from=ghcr.io/nginxinc/amd64/ngx_otel_module:linux-libc-nginx-1.23.3 /usr/lib/nginx/modules/otel_ngx_module.so /usr/lib/nginx/modules/otel_ngx_module.so
+#COPY --from=ghcr.io/nginxinc/amd64/ngx_otel_module:linux-libc-nginx-1.21.6 /usr/lib/nginx/modules/otel_ngx_module.so /usr/lib/nginx/modules/otel_ngx_module.so
+
+#ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nginx/modules/
+COPY etc/nginx/nginx.conf /etc/nginx/nginx.conf
+COPY etc/nginx/otel-nginx.toml /etc/nginx/otel-nginx.toml
+COPY etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf

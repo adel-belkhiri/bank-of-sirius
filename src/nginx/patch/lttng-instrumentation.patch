@@ -1,0 +1,164 @@
+diff --git a/sdk/src/trace/CMakeLists.txt b/sdk/src/trace/CMakeLists.txt
+index d09c047f..89046c96 100644
+--- a/sdk/src/trace/CMakeLists.txt
++++ b/sdk/src/trace/CMakeLists.txt
+@@ -16,12 +16,15 @@ add_library(
+   samplers/trace_id_ratio.cc
+   samplers/trace_id_ratio_factory.cc
+   random_id_generator.cc
+-  random_id_generator_factory.cc)
++  random_id_generator_factory.cc
++  span_begin_end_tpp.c)
+ 
++include (FindLTTngUST REQUIRED)
+ set_target_properties(opentelemetry_trace PROPERTIES EXPORT_NAME trace)
+ 
+ target_link_libraries(opentelemetry_trace PUBLIC opentelemetry_common
+-                                                 opentelemetry_resources)
++                                                 opentelemetry_resources
++						 -llttng-ust)
+ 
+ target_include_directories(
+   opentelemetry_trace
+diff --git a/sdk/src/trace/span.cc b/sdk/src/trace/span.cc
+index d473e49e..2548e072 100644
+--- a/sdk/src/trace/span.cc
++++ b/sdk/src/trace/span.cc
+@@ -7,6 +7,7 @@
+ #include "opentelemetry/context/runtime_context.h"
+ #include "opentelemetry/trace/trace_flags.h"
+ #include "opentelemetry/version.h"
++#include "src/trace/span_begin_end_tp.h"
+ 
+ OPENTELEMETRY_BEGIN_NAMESPACE
+ namespace sdk
+@@ -83,6 +84,29 @@ Span::Span(std::shared_ptr<Tracer> &&tracer,
+   recordable_->SetStartTime(NowOr(options.start_system_time));
+   start_steady_time = NowOr(options.start_steady_time);
+   recordable_->SetResource(tracer_->GetResource());
++
++  // Add lttng instrumentation
++  uint64_t sp_id, p_sp_id, trace_id_low, trace_id_high;
++  uint8_t sp_id_vec[8], p_sp_id_vec[8], trace_id_vec[16];
++
++  this->span_context_->span_id().CopyBytesTo(sp_id_vec);
++  memcpy(&sp_id, sp_id_vec, 8);
++
++  parent_span_context.span_id().CopyBytesTo(p_sp_id_vec);
++  memcpy(&p_sp_id, p_sp_id_vec, 8);
++
++  this->span_context_->trace_id().CopyBytesTo(trace_id_vec);
++  memcpy(&trace_id_high, trace_id_vec, 8);
++  memcpy(&trace_id_low, trace_id_vec + 8, 8);
++
++  auto resource = tracer_->GetResource();
++  auto tracer_attributes = resource.GetAttributes();
++  std::string service_name = opentelemetry::nostd::get<std::string>(tracer_attributes.find("service.name")->second);
++
++  lttng_ust_tracepoint(opentelemetry_ust, start_span, trace_id_high, trace_id_low,
++    sp_id, p_sp_id, service_name.c_str(), std::string(name).c_str(),
++    start_steady_time.time_since_epoch().count());
++
+   tracer_->GetProcessor().OnStart(*recordable_, parent_span_context);
+ }
+ 
+@@ -173,6 +197,22 @@ void Span::End(const trace_api::EndSpanOptions &options) noexcept
+   recordable_->SetDuration(std::chrono::steady_clock::time_point(end_steady_time) -
+                            std::chrono::steady_clock::time_point(start_steady_time));
+ 
++  // Add LTTng instrumentation here
++  uint64_t sp_id, trace_id_low, trace_id_high;
++  uint8_t sp_id_vec[8];
++  uint8_t trace_id_vec[16];
++
++  this->span_context_->span_id().CopyBytesTo(sp_id_vec);
++  memcpy(&sp_id, sp_id_vec, 8);
++
++  this->span_context_->trace_id().CopyBytesTo(trace_id_vec);
++  memcpy(&trace_id_high, trace_id_vec, 8);
++  memcpy(&trace_id_low, trace_id_vec + 8, 8);
++
++  lttng_ust_tracepoint(opentelemetry_ust, end_span, trace_id_high, trace_id_low, sp_id,
++    (std::chrono::steady_clock::time_point(end_steady_time) -
++    std::chrono::steady_clock::time_point(start_steady_time)).count());
++
+   tracer_->GetProcessor().OnEnd(std::move(recordable_));
+   recordable_.reset();
+ }
+diff --git a/sdk/src/trace/span_begin_end_tp.h b/sdk/src/trace/span_begin_end_tp.h
+new file mode 100644
+index 00000000..af3c5caf
+--- /dev/null
++++ b/sdk/src/trace/span_begin_end_tp.h
+@@ -0,0 +1,62 @@
++#undef TRACEPOINT_PROVIDER
++#define TRACEPOINT_PROVIDER opentelemetry_ust
++
++#undef TRACEPOINT_INCLUDE
++#define TRACEPOINT_INCLUDE "src/trace/span_begin_end_tp.h"
++
++#if !defined(SPAN_BEGIN_END_TP_H) || defined(TRACEPOINT_HEADER_MULTI_READ)
++#define SPAN_BEGIN_END_TP_H
++
++#include <lttng/tracepoint.h>
++
++LTTNG_UST_TRACEPOINT_EVENT(
++    opentelemetry_ust,
++    start_span,
++
++    /* Input arguments */
++    LTTNG_UST_TP_ARGS(
++        uint64_t, t_id_h,
++        uint64_t, t_id_l,
++        uint64_t, s_id,
++        uint64_t, s_p_id,
++        const char*, service_name,
++        const char*, op_name,
++        int64_t, s_time
++    ),
++
++    /* Output event fields */
++    LTTNG_UST_TP_FIELDS(
++        lttng_ust_field_integer_network_hex(uint64_t, trace_id_high, t_id_h)
++        lttng_ust_field_integer_network_hex(uint64_t, trace_id_low, t_id_l)
++        lttng_ust_field_integer_network_hex(uint64_t, span_id, s_id)
++        lttng_ust_field_integer_network_hex(uint64_t, parent_span_id, s_p_id)
++        lttng_ust_field_string(service_name, service_name)
++        lttng_ust_field_string(op_name, op_name)
++        lttng_ust_field_integer(int64_t, start_time, s_time)
++    )
++)
++
++LTTNG_UST_TRACEPOINT_EVENT(
++    opentelemetry_ust,
++    end_span,
++
++    /* Input arguments */
++    LTTNG_UST_TP_ARGS(
++        uint64_t, t_id_h,
++        uint64_t, t_id_l,
++        uint64_t, s_id,
++        int64_t, dur
++    ),
++
++    /* Output event fields */
++    LTTNG_UST_TP_FIELDS(
++        lttng_ust_field_integer_network_hex(uint64_t, trace_id_high, t_id_h)
++        lttng_ust_field_integer_network_hex(uint64_t, trace_id_low, t_id_l)
++        lttng_ust_field_integer_network_hex(uint64_t, span_id, s_id)
++        lttng_ust_field_integer(int64_t, duration, dur)
++    )
++)
++
++#endif /* SPAN_BEGIN_END_TP_H */
++
++#include <lttng/tracepoint-event.h>
+diff --git a/sdk/src/trace/span_begin_end_tpp.c b/sdk/src/trace/span_begin_end_tpp.c
+new file mode 100644
+index 00000000..1b76133e
+--- /dev/null
++++ b/sdk/src/trace/span_begin_end_tpp.c
+@@ -0,0 +1,3 @@
++#define LTTNG_UST_TRACEPOINT_CREATE_PROBES
++#define TRACEPOINT_DEFINE
++#include "span_begin_end_tp.h"

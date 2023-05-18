@@ -20,4 +20,4 @@ ENV APP_NAME balance-reader
 
 COPY target/balancereader.jar /app/libs/balancereader.jar
 
-CMD ["java", "-Dlogging.config=/app/log4j2.xml", "-jar", "/app/libs/balancereader.jar"]
+CMD ["java", "-Dlogging.config=/app/log4j2.xml", "-Djava.library.path=/usr/lib/x86_64-linux-gnu/jni", "-jar", "/app/libs/balancereader.jar"]

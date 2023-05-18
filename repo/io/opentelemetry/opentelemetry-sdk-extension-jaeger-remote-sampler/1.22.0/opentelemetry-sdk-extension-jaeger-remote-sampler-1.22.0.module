@@ -1,0 +1,132 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.opentelemetry",
+    "module": "opentelemetry-sdk-extension-jaeger-remote-sampler",
+    "version": "1.22.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk",
+          "version": {
+            "requires": "1.22.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-sdk-extension-jaeger-remote-sampler-1.22.0.jar",
+          "url": "opentelemetry-sdk-extension-jaeger-remote-sampler-1.22.0.jar",
+          "size": 144969,
+          "sha512": "cb31dfecfac8e9852f1b7ea46ca4853bde06bee60f40a9f96a75225041fe5119750944a72cd71b2d6f65eb11044612925c4bd041b84503f157d42d680aac45d0",
+          "sha256": "b60f0f29139ffd0ea779b4d89e2d51cd4598f93d69b71a03a6aca4cef9f07a90",
+          "sha1": "f61495c2e82f82b04265607555ae04582ed59e35",
+          "md5": "8d662025703bd066d4a7dcdf928f4606"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-exporter-common",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp",
+          "version": {
+            "requires": "4.10.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-sdk-extension-jaeger-remote-sampler-1.22.0.jar",
+          "url": "opentelemetry-sdk-extension-jaeger-remote-sampler-1.22.0.jar",
+          "size": 144969,
+          "sha512": "cb31dfecfac8e9852f1b7ea46ca4853bde06bee60f40a9f96a75225041fe5119750944a72cd71b2d6f65eb11044612925c4bd041b84503f157d42d680aac45d0",
+          "sha256": "b60f0f29139ffd0ea779b4d89e2d51cd4598f93d69b71a03a6aca4cef9f07a90",
+          "sha1": "f61495c2e82f82b04265607555ae04582ed59e35",
+          "md5": "8d662025703bd066d4a7dcdf928f4606"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-sdk-extension-jaeger-remote-sampler-1.22.0-javadoc.jar",
+          "url": "opentelemetry-sdk-extension-jaeger-remote-sampler-1.22.0-javadoc.jar",
+          "size": 83797,
+          "sha512": "f94878481807165d6817be90a8f512be7982c4d8cdb5aba4c7901802315a3fc2c4d4cc8077c41ad349f7ef62273edf698fe46b0a029e361b2b0e3a1e8a850977",
+          "sha256": "4a1199445256bb51bcd81eeba0935905e9abd86f1230b3c3dc17c080ef5dcf25",
+          "sha1": "0edcc35ad607e6af321eebcada504a73181bd34f",
+          "md5": "e2b53b59948cba2490a4cb7f4f2dbe48"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-sdk-extension-jaeger-remote-sampler-1.22.0-sources.jar",
+          "url": "opentelemetry-sdk-extension-jaeger-remote-sampler-1.22.0-sources.jar",
+          "size": 28926,
+          "sha512": "8a98a3d6896729d654538f9ec04efb3eb868e73d43e94194f57371f6312c4dced21f2fb4c0aac824e039e7da6c71c8d0f68ea32da698e6e2effdd07eb644f38b",
+          "sha256": "4730b34066741bde1dd92c3034c830d29f0c2ef48dfd180062403528bc0e7059",
+          "sha1": "3f8ca0afe2be79196e25eb10f468051871a2ae57",
+          "md5": "f7167c97dc664cf182b647fadfa74ae3"
+        }
+      ]
+    }
+  ]
+}

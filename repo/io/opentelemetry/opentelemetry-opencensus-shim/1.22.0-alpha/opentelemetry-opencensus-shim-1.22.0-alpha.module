@@ -1,0 +1,202 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.opentelemetry",
+    "module": "opentelemetry-opencensus-shim",
+    "version": "1.22.0-alpha",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-api",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-extension-trace-propagators",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk-metrics",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.opencensus",
+          "module": "opencensus-api",
+          "version": {
+            "requires": "0.31.1"
+          }
+        },
+        {
+          "group": "io.opencensus",
+          "module": "opencensus-impl-core",
+          "version": {
+            "requires": "0.31.1"
+          }
+        },
+        {
+          "group": "io.opencensus",
+          "module": "opencensus-exporter-metrics-util",
+          "version": {
+            "requires": "0.31.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-opencensus-shim-1.22.0-alpha.jar",
+          "url": "opentelemetry-opencensus-shim-1.22.0-alpha.jar",
+          "size": 39089,
+          "sha512": "e21418912e9b335d2817ee1441262beb6766496ef20de7e188985acc94e67fcadf8a93caa8bed09e9f1a98e0296130e88ada9badc9762e1ba51c002eb42293cb",
+          "sha256": "63bde94c5526e57bedc0c1da2b8677bc33f9d26b3515d10db6503d3a8d106b09",
+          "sha1": "11cd084e2e099e073824510c4823e33bfd084758",
+          "md5": "97504e82606c086ab211d048b91721ea"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-api",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-extension-trace-propagators",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk-metrics",
+          "version": {
+            "requires": "1.22.0"
+          }
+        },
+        {
+          "group": "io.opencensus",
+          "module": "opencensus-api",
+          "version": {
+            "requires": "0.31.1"
+          }
+        },
+        {
+          "group": "io.opencensus",
+          "module": "opencensus-impl-core",
+          "version": {
+            "requires": "0.31.1"
+          }
+        },
+        {
+          "group": "io.opencensus",
+          "module": "opencensus-exporter-metrics-util",
+          "version": {
+            "requires": "0.31.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-opencensus-shim-1.22.0-alpha.jar",
+          "url": "opentelemetry-opencensus-shim-1.22.0-alpha.jar",
+          "size": 39089,
+          "sha512": "e21418912e9b335d2817ee1441262beb6766496ef20de7e188985acc94e67fcadf8a93caa8bed09e9f1a98e0296130e88ada9badc9762e1ba51c002eb42293cb",
+          "sha256": "63bde94c5526e57bedc0c1da2b8677bc33f9d26b3515d10db6503d3a8d106b09",
+          "sha1": "11cd084e2e099e073824510c4823e33bfd084758",
+          "md5": "97504e82606c086ab211d048b91721ea"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-opencensus-shim-1.22.0-alpha-javadoc.jar",
+          "url": "opentelemetry-opencensus-shim-1.22.0-alpha-javadoc.jar",
+          "size": 91781,
+          "sha512": "de9a9764dee160ae9e67fecb83531bceee781b987293376bc02c4512007bde95aa90d0c1983cb2af0b1cefc6034c45210a7c7bcfaaca0b9524d6017568335e61",
+          "sha256": "c532e3ae279759c87afb2d2c062bef2fb5c3f707f846af48f11799598ffa6d6a",
+          "sha1": "280114ac26fa1c552bdd0c3b72b03e7f063ef84f",
+          "md5": "cc0993c0a488cc25ddf8c355e644a029"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-opencensus-shim-1.22.0-alpha-sources.jar",
+          "url": "opentelemetry-opencensus-shim-1.22.0-alpha-sources.jar",
+          "size": 20980,
+          "sha512": "56386f49c4813572792ed9c65d8e05b07eaf077f76f3b623b1a7ad83b950f210bcc9acb2561d4527d3a0b88fdc2ff529072fee8a3779bbfe254104002da51af6",
+          "sha256": "deca6bb302001ef94bb2215abbc0070a8756c86b132e7dbb58c69c636525925b",
+          "sha1": "d976b6e1a8c0e3fc64cbac9eff58f3d23363d4f3",
+          "md5": "f7679c013f7599183ad737c3a917a91d"
+        }
+      ]
+    }
+  ]
+}
